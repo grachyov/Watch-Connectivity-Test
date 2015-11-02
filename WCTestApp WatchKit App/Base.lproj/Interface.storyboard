@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WCTestApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="y5R-33-o7Q">
+                            <items>
+                                <label alignment="left" text="Message from iPhone:" numberOfLines="2" id="vwF-gh-lnR">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="left" text="Reply count: 0" id="IYJ-Hy-igN">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Ping iPhone" id="bPo-do-AUy">
+                                    <connections>
+                                        <action selector="pingIphoneButtonTapped" destination="AgC-eL-Hgc" id="U1O-KK-B8t"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="messageFromIphoneLabel" destination="vwF-gh-lnR" id="gEU-25-jy8"/>
+                        <outlet property="replyCountLabel" destination="IYJ-Hy-igN" id="5of-98-cvp"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>

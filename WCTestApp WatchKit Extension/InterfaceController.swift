@@ -12,20 +12,34 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    var replyCount = 0
+    
+    @IBOutlet var messageFromIphoneLabel: WKInterfaceLabel!
+    @IBOutlet var replyCountLabel: WKInterfaceLabel!
+    
+    @IBAction func pingIphoneButtonTapped() {
+        WatchWCManager.sharedManager.sendMessage("Ping")
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "watchMessageNotificationReceived:", name: "Message Received", object: nil)
     }
 
+    func watchMessageNotificationReceived(notification: NSNotification) {
+        guard let messageString = notification.object as? String else { return }
+        dispatch_async(dispatch_get_main_queue()) {
+            self.messageFromIphoneLabel.setText("Message from iPhone: \(messageString)")
+        }
+    }
+    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
 }

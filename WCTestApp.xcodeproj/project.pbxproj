@@ -19,6 +19,8 @@
 		ADD496161BE6F6DA0036332B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD496151BE6F6DA0036332B /* InterfaceController.swift */; };
 		ADD496181BE6F6DA0036332B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD496171BE6F6DA0036332B /* ExtensionDelegate.swift */; };
 		ADD4961A1BE6F6DA0036332B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD496191BE6F6DA0036332B /* Assets.xcassets */; };
+		ADD4962A1BE6FA2F0036332B /* IphoneWCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD496291BE6FA2F0036332B /* IphoneWCManager.swift */; };
+		ADD4962C1BE6FAAA0036332B /* WatchWCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4962B1BE6FAAA0036332B /* WatchWCManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		ADD496171BE6F6DA0036332B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		ADD496191BE6F6DA0036332B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADD4961B1BE6F6DA0036332B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD496291BE6FA2F0036332B /* IphoneWCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IphoneWCManager.swift; sourceTree = "<group>"; };
+		ADD4962B1BE6FAAA0036332B /* WatchWCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchWCManager.swift; path = ../WCTestApp/WatchWCManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				ADD495F21BE6F6DA0036332B /* AppDelegate.swift */,
+				ADD496291BE6FA2F0036332B /* IphoneWCManager.swift */,
 				ADD495F41BE6F6DA0036332B /* ViewController.swift */,
 				ADD495F61BE6F6DA0036332B /* Main.storyboard */,
 				ADD495F91BE6F6DA0036332B /* Assets.xcassets */,
@@ -146,6 +151,7 @@
 		ADD496141BE6F6DA0036332B /* WCTestApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				ADD4962B1BE6FAAA0036332B /* WatchWCManager.swift */,
 				ADD496151BE6F6DA0036332B /* InterfaceController.swift */,
 				ADD496171BE6F6DA0036332B /* ExtensionDelegate.swift */,
 				ADD496191BE6F6DA0036332B /* Assets.xcassets */,
@@ -222,12 +228,15 @@
 				TargetAttributes = {
 					ADD495EE1BE6F6DA0036332B = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 8DXC3N7E7P;
 					};
 					ADD496001BE6F6DA0036332B = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 8DXC3N7E7P;
 					};
 					ADD4960F1BE6F6DA0036332B = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 8DXC3N7E7P;
 					};
 				};
 			};
@@ -288,6 +297,7 @@
 			files = (
 				ADD495F51BE6F6DA0036332B /* ViewController.swift in Sources */,
 				ADD495F31BE6F6DA0036332B /* AppDelegate.swift in Sources */,
+				ADD4962A1BE6FA2F0036332B /* IphoneWCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD4962C1BE6FAAA0036332B /* WatchWCManager.swift in Sources */,
 				ADD496181BE6F6DA0036332B /* ExtensionDelegate.swift in Sources */,
 				ADD496161BE6F6DA0036332B /* InterfaceController.swift in Sources */,
 			);
@@ -427,6 +438,7 @@
 		ADD4961F1BE6F6DA0036332B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WCTestApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grachyov.WCTestApp.watchkitapp.watchkitextension;
@@ -441,6 +453,7 @@
 		ADD496201BE6F6DA0036332B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WCTestApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grachyov.WCTestApp.watchkitapp.watchkitextension;
@@ -456,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WCTestApp_WatchKit_Extension;
 				INFOPLIST_FILE = "WCTestApp WatchKit App/Info.plist";
@@ -472,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WCTestApp_WatchKit_Extension;
 				INFOPLIST_FILE = "WCTestApp WatchKit App/Info.plist";
@@ -488,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WCTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grachyov.WCTestApp;
@@ -499,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WCTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grachyov.WCTestApp;
