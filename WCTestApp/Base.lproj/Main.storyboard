@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEX-67-8rg">
-                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <rect key="frame" x="200" y="185" width="200" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0Gf-8k-thw"/>
@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WX5-Rg-gio">
-                                <rect key="frame" x="280" y="323" width="40" height="30"/>
+                                <rect key="frame" x="280" y="223" width="40" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Send!"/>
                                 <connections>
@@ -35,7 +35,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch ping count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcm-iv-EHz">
-                                <rect key="frame" x="223" y="256" width="154" height="21"/>
+                                <rect key="frame" x="223" y="156" width="154" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reply count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LS3-Ls-XKv">
+                                <rect key="frame" x="245" y="253" width="110" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,13 +54,16 @@
                         <constraints>
                             <constraint firstItem="CEX-67-8rg" firstAttribute="top" secondItem="Jcm-iv-EHz" secondAttribute="bottom" constant="8" id="2UK-Wx-DYx"/>
                             <constraint firstItem="CEX-67-8rg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6gi-D8-l8g"/>
-                            <constraint firstItem="CEX-67-8rg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G7m-fg-3GS"/>
+                            <constraint firstItem="LS3-Ls-XKv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E85-Or-jMA"/>
+                            <constraint firstItem="CEX-67-8rg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="G7m-fg-3GS"/>
+                            <constraint firstItem="LS3-Ls-XKv" firstAttribute="top" secondItem="WX5-Rg-gio" secondAttribute="bottom" id="Rhg-TM-mi3"/>
                             <constraint firstItem="Jcm-iv-EHz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSj-v8-9Kp"/>
                             <constraint firstItem="WX5-Rg-gio" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tfL-CM-OW5"/>
                             <constraint firstItem="WX5-Rg-gio" firstAttribute="top" secondItem="CEX-67-8rg" secondAttribute="bottom" constant="8" id="uvT-SJ-vhU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="replyCounterLabel" destination="LS3-Ls-XKv" id="KB5-Kn-T35"/>
                         <outlet property="textField" destination="CEX-67-8rg" id="rZg-j7-1hO"/>
                         <outlet property="watchPingCounterLabel" destination="Jcm-iv-EHz" id="55S-8q-Ntt"/>
                     </connections>

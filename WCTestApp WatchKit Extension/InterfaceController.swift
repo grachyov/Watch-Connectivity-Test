@@ -23,13 +23,21 @@ class InterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "watchMessageNotificationReceived:", name: "Message Received", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "iphoneMessageNotificationReceived:", name: "Message Received", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "replyNotificationReceived:", name: "Reply Received", object: nil)
     }
 
-    func watchMessageNotificationReceived(notification: NSNotification) {
+    func iphoneMessageNotificationReceived(notification: NSNotification) {
         guard let messageString = notification.object as? String else { return }
         dispatch_async(dispatch_get_main_queue()) {
             self.messageFromIphoneLabel.setText("Message from iPhone: \(messageString)")
+        }
+    }
+    
+    func replyNotificationReceived(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.replyCount++
+            self.replyCountLabel.setText("Reply count: \(self.replyCount)")
         }
     }
     
@@ -39,6 +47,9 @@ class InterfaceController: WKInterfaceController {
 
     override func didDeactivate() {
         super.didDeactivate()
+    }
+    
+    deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 

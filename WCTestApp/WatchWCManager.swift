@@ -26,7 +26,11 @@ class WatchWCManager: NSObject, WCSessionDelegate {
             if session.reachable {
                 let message = ["Body" : message]
                 session.sendMessage(message,
-                    replyHandler: { (reply: [String : AnyObject]) -> Void in },
+                    replyHandler: { (reply: [String : AnyObject]) -> Void in
+                        guard let _ = reply["Body"] else { return }
+                        let notification = NSNotification(name: "Reply Received", object: nil)
+                        NSNotificationCenter.defaultCenter().postNotification(notification)
+                    },
                     errorHandler: nil
                 )
             }
@@ -40,5 +44,7 @@ class WatchWCManager: NSObject, WCSessionDelegate {
         guard let messageString = message["Body"] as? String else { return }
         let notification = NSNotification(name: "Message Received", object: messageString)
         NSNotificationCenter.defaultCenter().postNotification(notification)
+        let reply = ["Body" : "Success"]
+        replyHandler(reply)
     }
 }
